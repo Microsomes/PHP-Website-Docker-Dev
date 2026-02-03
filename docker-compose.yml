@@ -2,6 +2,8 @@
 services:
 
   frontend:
+    image: registry.digitalocean.com/myregistrytayyab/frontend:1.0.0
+    platform: linux/amd64
     build:
       context: .
       dockerfile: ./.docker/dev/frontend/Dockerfile
@@ -15,9 +17,10 @@ services:
     
     ports:
       - "8023:80"
-    image: tayyab7891/fireyopssphp:frontend
 
   backend:
+    image: registry.digitalocean.com/myregistrytayyab/backend:1.0.0
+    platform: linux/amd64
     build:
       context: .
       dockerfile: ./.docker/dev/backend/Dockerfile
@@ -28,7 +31,6 @@ services:
     networks:
       - dockerphp
       
-    image: tayyab7891/fireyopssphp:backend
 
 
 networks:
